@@ -1,8 +1,8 @@
 package com.deepblue.DeepblueRescue.domain;
 
-import com.deepblue.rescue.domain.Animal;
-import com.deepblue.rescue.domain.Specialist;
-import com.deepblue.rescue.domain.TreatmentType;
+import com.deepblue.DeepblueRescue.domain.Animal;
+import com.deepblue.DeepblueRescue.domain.Specialist;
+import com.deepblue.DeepblueRescue.domain.TreatmentType;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

@@ -1,7 +1,7 @@
 package com.deepblue.DeepblueRescue.repository;
 
-import com.deepblue.rescue.domain.Animal;
-import com.deepblue.rescue.domain.RescueStatus;
+import com.deepblue.DeepblueRescue.domain.Animal;
+import com.deepblue.DeepblueRescue.domain.RescueStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -24,7 +24,7 @@ public interface AnimalRepository extends JpaRepository<Animal, Long> {
      * tratamiento de un especialista con la experiencia indicada.
      * Varias asociaciones + joins: Query Method no es legible, se usa JPQL.
      */
-    @Query("""
+    @Query(value = """
             select distinct a
             from Animal a
             join a.rescueCase rc

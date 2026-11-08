@@ -1,6 +1,6 @@
 package com.deepblue.DeepblueRescue.domain;
 
-import com.deepblue.rescue.domain.Expertise;
+import com.deepblue.DeepblueRescue.domain.Expertise;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

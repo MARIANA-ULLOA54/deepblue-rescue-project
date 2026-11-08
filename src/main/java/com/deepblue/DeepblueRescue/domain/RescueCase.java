@@ -1,7 +1,5 @@
 package com.deepblue.DeepblueRescue.domain;
 
-import com.deepblue.rescue.domain.Animal;
-import com.deepblue.rescue.domain.RescueStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

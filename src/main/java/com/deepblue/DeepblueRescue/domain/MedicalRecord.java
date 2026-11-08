@@ -1,6 +1,6 @@
 package com.deepblue.DeepblueRescue.domain;
 
-import com.deepblue.rescue.domain.Animal;
+import com.deepblue.DeepblueRescue.domain.Animal;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -34,8 +34,8 @@ public class MedicalRecord {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public Animal getAnimal() { return animal; }
-    public void setAnimal(Animal animal) { this.animal = animal; }
     public BigDecimal getInitialWeight() { return initialWeight; }
+    public void setAnimal(Animal animal) { this.animal = animal; }
     public void setInitialWeight(BigDecimal initialWeight) { this.initialWeight = initialWeight; }
     public String getInitialCondition() { return initialCondition; }
     public void setInitialCondition(String initialCondition) { this.initialCondition = initialCondition; }

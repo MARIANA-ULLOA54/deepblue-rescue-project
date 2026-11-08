@@ -1,6 +1,6 @@
 package com.deepblue.DeepblueRescue.repository;
 
-import com.deepblue.rescue.domain.Treatment;
+import com.deepblue.DeepblueRescue.domain.Treatment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
