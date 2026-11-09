@@ -22,10 +22,10 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@SuppressWarnings({"resource", "unused"})
 @Testcontainers
 @SpringBootTest
 @Transactional
-
 class PersistenceIntegrationTest {
 
     @Container
@@ -144,9 +144,8 @@ class PersistenceIntegrationTest {
     @DisplayName("RescueCenter 1:N RescueCase")
     void oneToMany() {
         RescueCenter c = center("DB-CAR");
-        rescueCase(c, "RES-A", RescueStatus.ADMITTED, LocalDate.of(2026, 8, 1));
-        rescueCase(c, "RES-B", RescueStatus.ADMITTED, LocalDate.of(2026, 8, 2));
-        rescueCenterRepository.saveAndFlush(c);
+        rescueCaseRepository.saveAndFlush(rescueCase(c, "RES-A", RescueStatus.ADMITTED, LocalDate.of(2026, 8, 1)));
+        rescueCaseRepository.saveAndFlush(rescueCase(c, "RES-B", RescueStatus.ADMITTED, LocalDate.of(2026, 8, 2)));
 
         List<RescueCase> cases = rescueCaseRepository.findByRescueCenterCode("DB-CAR");
         assertThat(cases).hasSize(2)
@@ -210,10 +209,9 @@ class PersistenceIntegrationTest {
     @DisplayName("Query Method por status, ordenado por fecha")
     void findByStatus() {
         RescueCenter c = center("DB-CAR");
-        rescueCase(c, "RES-001", RescueStatus.IN_REHABILITATION, LocalDate.of(2026, 8, 3));
-        rescueCase(c, "RES-002", RescueStatus.READY_FOR_RELEASE, LocalDate.of(2026, 8, 2));
-        rescueCase(c, "RES-003", RescueStatus.IN_REHABILITATION, LocalDate.of(2026, 8, 1));
-        rescueCenterRepository.saveAndFlush(c);
+        rescueCaseRepository.saveAndFlush(rescueCase(c, "RES-001", RescueStatus.IN_REHABILITATION, LocalDate.of(2026, 8, 3)));
+        rescueCaseRepository.saveAndFlush(rescueCase(c, "RES-002", RescueStatus.READY_FOR_RELEASE, LocalDate.of(2026, 8, 2)));
+        rescueCaseRepository.saveAndFlush(rescueCase(c, "RES-003", RescueStatus.IN_REHABILITATION, LocalDate.of(2026, 8, 1)));
 
         List<RescueCase> result = rescueCaseRepository.findByStatusOrderByRescueDateAsc(RescueStatus.IN_REHABILITATION);
 
@@ -224,10 +222,9 @@ class PersistenceIntegrationTest {
     @DisplayName("Query Method con fecha: posteriores, más reciente primero")
     void findByDateAfter() {
         RescueCenter c = center("DB-CAR");
-        rescueCase(c, "RES-D1", RescueStatus.ADMITTED, LocalDate.of(2026, 7, 1));
-        rescueCase(c, "RES-D2", RescueStatus.ADMITTED, LocalDate.of(2026, 8, 10));
-        rescueCase(c, "RES-D3", RescueStatus.ADMITTED, LocalDate.of(2026, 8, 20));
-        rescueCenterRepository.saveAndFlush(c);
+        rescueCaseRepository.saveAndFlush(rescueCase(c, "RES-D1", RescueStatus.ADMITTED, LocalDate.of(2026, 7, 1)));
+        rescueCaseRepository.saveAndFlush(rescueCase(c, "RES-D2", RescueStatus.ADMITTED, LocalDate.of(2026, 8, 10)));
+        rescueCaseRepository.saveAndFlush(rescueCase(c, "RES-D3", RescueStatus.ADMITTED, LocalDate.of(2026, 8, 20)));
 
         assertThat(rescueCaseRepository.findByRescueDateAfterOrderByRescueDateDesc(LocalDate.of(2026, 8, 1)))
                 .extracting(RescueCase::getCaseCode).containsExactly("RES-D3", "RES-D2");
