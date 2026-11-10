@@ -1,6 +1,5 @@
-package com.deepblue.DeepblueRescue.domain;
+package com.deepblue.rescue.domain;
 
-import com.deepblue.DeepblueRescue.domain.Animal;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;

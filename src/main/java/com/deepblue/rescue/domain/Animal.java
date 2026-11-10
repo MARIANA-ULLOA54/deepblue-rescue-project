@@ -1,4 +1,4 @@
-package com.deepblue.DeepblueRescue.domain;
+package com.deepblue.rescue.domain;
 
 import java.util.ArrayList;
 import java.util.List;

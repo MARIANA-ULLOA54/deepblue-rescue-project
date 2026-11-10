@@ -1,7 +1,7 @@
-package com.deepblue.DeepblueRescue.repository;
+package com.deepblue.rescue.repository;
 
-import com.deepblue.DeepblueRescue.domain.RescueCase;
-import com.deepblue.DeepblueRescue.domain.RescueStatus;
+import com.deepblue.rescue.domain.RescueCase;
+import com.deepblue.rescue.domain.RescueStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;

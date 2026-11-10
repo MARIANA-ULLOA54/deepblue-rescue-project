@@ -1,4 +1,4 @@
-package com.deepblue.DeepblueRescue;
+package com.deepblue.rescue;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

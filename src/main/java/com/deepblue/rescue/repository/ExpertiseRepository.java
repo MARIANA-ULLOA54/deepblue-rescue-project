@@ -1,6 +1,6 @@
-package com.deepblue.DeepblueRescue.repository;
+package com.deepblue.rescue.repository;
 
-import com.deepblue.DeepblueRescue.domain.Expertise;
+import com.deepblue.rescue.domain.Expertise;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,8 +1,5 @@
-package com.deepblue.DeepblueRescue.domain;
+package com.deepblue.rescue.domain;
 
-import com.deepblue.DeepblueRescue.domain.Animal;
-import com.deepblue.DeepblueRescue.domain.Specialist;
-import com.deepblue.DeepblueRescue.domain.TreatmentType;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -34,6 +31,18 @@ public class Treatment {
     private String description;
 
     public Treatment() {}
+
+    public Treatment(Animal animal,
+                     Specialist specialist,
+                     LocalDateTime performedAt,
+                     TreatmentType type,
+                     String description) {
+        this.animal = animal;
+        this.specialist = specialist;
+        this.performedAt = performedAt;
+        this.type = type;
+        this.description = description;
+    }
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

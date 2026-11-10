@@ -1,7 +1,7 @@
-package com.deepblue.DeepblueRescue.repository;
+package com.deepblue.rescue.repository;
 
-import com.deepblue.DeepblueRescue.domain.Animal;
-import com.deepblue.DeepblueRescue.domain.RescueStatus;
+import com.deepblue.rescue.domain.Animal;
+import com.deepblue.rescue.domain.RescueStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

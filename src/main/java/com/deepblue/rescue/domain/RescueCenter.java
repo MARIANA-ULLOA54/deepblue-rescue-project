@@ -1,6 +1,5 @@
-package com.deepblue.DeepblueRescue.domain;
+package com.deepblue.rescue.domain;
 
-import com.deepblue.DeepblueRescue.domain.RescueCase;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

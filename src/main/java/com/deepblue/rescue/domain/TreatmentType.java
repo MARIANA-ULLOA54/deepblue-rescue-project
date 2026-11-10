@@ -1,4 +1,4 @@
-package com.deepblue.DeepblueRescue.domain;
+package com.deepblue.rescue.domain;
 
 public enum TreatmentType {
     WOUND_CARE,
