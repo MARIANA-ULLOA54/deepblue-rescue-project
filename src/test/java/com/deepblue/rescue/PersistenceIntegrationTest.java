@@ -22,7 +22,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@SuppressWarnings({"resource", "unused"})
+@SuppressWarnings({"resource", "unused", "SqlResolve"})
 @Testcontainers
 @SpringBootTest
 @Transactional
